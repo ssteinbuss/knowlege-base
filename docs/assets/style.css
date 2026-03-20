@@ -1,0 +1,18 @@
+/* Header logo placement (right side) */
+.kb-header-logo {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.35rem;
+}
+.kb-header-logo .kb-logo {
+  height: 28px;
+  opacity: 0.9;
+}
+
+/* Footer layout */
+.kb-footer-links, .kb-footer-copy {
+  margin: 0.25rem 0;
+}
+.kb-footer-links a {
+  text-decoration: none;
+}
