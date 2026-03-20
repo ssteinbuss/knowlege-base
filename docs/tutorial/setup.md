@@ -3,14 +3,17 @@
 This guide walks through the setup required to operate the `knowledge-base` site.
 
 ## 1) Create the repository
+
 - Create a new repository named **`knowledge-base`** in your GitHub organization.
 - Default branch: **`main`**.
 
 ## 2) Configure GitHub Pages
+
 - Settings → Pages → Build and deployment: **Source: GitHub Actions** (no `gh-pages` branch).
 - No custom domain.
 
 ## 3) Add secret
+
 - Settings → Secrets and variables → Actions → **New repository secret**:
   - Name: `SOURCE_REPOS_PAT`
   - Value: a **read‑only** Personal Access Token with `repo` (read) scope that can access:
@@ -21,6 +24,7 @@ This guide walks through the setup required to operate the `knowledge-base` site
 > Least privilege: this PAT is used **only** for checking out the source repositories.
 
 ## 4) Branch protection (recommended)
+
 - Protect `main` and **require status checks to pass**:
   - `Markdown Lint`
   - `Broken Link Check`

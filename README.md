@@ -3,12 +3,14 @@
 A standards-aware, CI-gated documentation site built with **MkDocs Material** and deployed via **GitHub Pages (Actions deployment)**. It assembles content from three IDSA repositories at build time, merges their summaries into one navigation, and enforces quality gates before publishing.
 
 ## Why this repo?
+
 - **Single entry point** for Rulebook, RAM5, and the Organizational Handbook.
 - **Consistent navigation** using a merged `SUMMARY.md`.
 - **Searchable** (client-side search plugin).
 - **Reliable**: markdown lint + link checks + strict build gate deployments.
 
 ## External sources (read-only during build)
+
 1. `International-Data-Spaces-Association/IDSA-Rulebook` → `documentation/` → copied to `docs/external/rulebook/`
 2. `International-Data-Spaces-Association/RAM5` → `docs/` → `docs/external/ram5/`
 3. `International-Data-Spaces-Association/members-area` → `OrganizationalHandbook/` → `docs/external/handbook/`
@@ -16,6 +18,7 @@ A standards-aware, CI-gated documentation site built with **MkDocs Material** an
 > Checked out with the PAT stored in `SOURCE_REPOS_PAT`. Files are **not** committed back.
 
 ## How it works
+
 - **CI** checks out the sources, runs `scripts/sync_external_content.py` which:
   - Copies each folder into `docs/external/...`
   - Concatenates their *summary files* (Rulebook → RAM5 → Handbook)
@@ -25,6 +28,7 @@ A standards-aware, CI-gated documentation site built with **MkDocs Material** an
 - Deployment occurs **only on `main`** and **only if** lint, link check, and build succeed.
 
 ## Local development
+
 ```bash
 # Option A: Docker
 docker compose up
